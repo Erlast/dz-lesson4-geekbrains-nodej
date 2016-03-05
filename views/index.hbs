@@ -3,6 +3,26 @@
 
 </head>
 <body>
-I'm here
+<form action="" method="post">
+    <label>Выберите ресурс</label><br/>
+    <input type="radio" name="resurs" value="mail">news.mail.ru<br/>
+    <input type="radio" name="resurs" value="yandex">news.yandex.ru<br/>
+    <input type="radio" name="resurs" value="ria">ria.ru<br/>
+
+    <label>Выберите раздел</label><br/>
+    <input type="radio" name="razdel" value="politics">Политика<br/>
+    <input type="radio" name="razdel" value="economy">Экономика<br/>
+    <input type="radio" name="razdel" value="sport">Спорт<br/>
+
+    <label>Выберите количество новостей к показу</label><br/>
+    <input type="radio" name="count" value="5">5<br/>
+    <input type="radio" name="count" value="10">10<br/>
+    <input type="radio" name="count" value="15">15<br/>
+    <input type="radio" name="count" value="15">20<br/>
+
+    <input type="submit" value="Отправить"/>
+</form>
+
+{{result}}
 </body>
 </html>
