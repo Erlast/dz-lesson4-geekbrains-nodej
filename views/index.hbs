@@ -3,26 +3,32 @@
 
 </head>
 <body>
+<h2>Новости Кубани.</h2>
+{{body.politika}}
 <form action="" method="post">
-    <label>Выберите ресурс</label><br/>
-    <input type="radio" name="resurs" value="mail">news.mail.ru<br/>
-    <input type="radio" name="resurs" value="yandex">news.yandex.ru<br/>
-    <input type="radio" name="resurs" value="ria">ria.ru<br/>
 
     <label>Выберите раздел</label><br/>
-    <input type="radio" name="razdel" value="politics">Политика<br/>
-    <input type="radio" name="razdel" value="economy">Экономика<br/>
-    <input type="radio" name="razdel" value="sport">Спорт<br/>
+    <input type="radio" name="razdel" value="politika" {{#if body.politika}}checked="checked"{{/if}}>Политика<br/>
+    <input type="radio" name="razdel" value="ekonomika" {{#if body.ekonomika}}checked="checked"{{/if}}>Экономика<br/>
+    <input type="radio" name="razdel" value="kultura" {{#if body.kultura}}checked="checked"{{/if}}>Культура<br/>
+    <input type="radio" name="razdel" value="proisshestviy" {{#if body.proisshestviy}}checked="checked"{{/if}}>Происшествия<br/>
+    <input type="radio" name="razdel" value="sport" {{#if body.sport}}checked="checked"{{/if}}>Спорт<br/>
 
     <label>Выберите количество новостей к показу</label><br/>
-    <input type="radio" name="count" value="5">5<br/>
-    <input type="radio" name="count" value="10">10<br/>
-    <input type="radio" name="count" value="15">15<br/>
-    <input type="radio" name="count" value="15">20<br/>
+    <input type="radio" name="count" value="3" {{#if body.c3}}checked="checked"{{/if}}>3<br/>
+    <input type="radio" name="count" value="6" {{#if body.c6}}checked="checked"{{/if}}>6<br/>
+    <input type="radio" name="count" value="9" {{#if body.c9}}checked="checked"{{/if}}>9<br/>
+    <input type="radio" name="count" value="12" {{#if body.c12}}checked="checked"{{/if}}>12<br/>
 
     <input type="submit" value="Отправить"/>
 </form>
+{{#each result}}
+<div>
+    <h3>{{title}}</h3>
+    <div>{{date}}</div>
+    <p>{{description}}</p>
+</div>
+{{/each}}
 
-{{result}}
 </body>
 </html>
